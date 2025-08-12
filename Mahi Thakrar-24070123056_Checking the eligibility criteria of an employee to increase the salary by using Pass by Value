@@ -1,0 +1,70 @@
+//NAME:MAHI THAKRAR
+//PRN:24070123056
+//ENTC A3
+//EXPERIMENT-10
+
+#include <iostream>
+using namespace std;
+
+double checkEligibilityAndIncrement(double salary, int researchProjects, int researchPublications, double profit, int newProjectsInPipeline) {
+    int conditionsSatisfied = 0;
+
+    // Check conditions
+    if (researchProjects > 0) conditionsSatisfied++;
+    if (researchPublications > 0) conditionsSatisfied++;
+    if (profit > 100000) conditionsSatisfied++; // \$1 lakh = 100000
+    if (newProjectsInPipeline > 0) conditionsSatisfied++;
+
+    // Increment salary if at least three conditions are satisfied
+    if (conditionsSatisfied >= 3) {
+        salary *= 1.2; // Increment salary by 20%
+        cout << "Salary incremented to " << salary << endl;
+    } else {
+        cout << "Conditions not met. Salary remains " << salary << endl;
+    }
+
+    return salary;
+}
+
+int main() {
+    int researchProjects;
+    int researchPublications;
+    double profit;
+    int newProjectsInPipeline;
+    double salary;
+
+    cout << "Enter number of research projects: ";
+    cin >> researchProjects;
+    cout << "Enter number of research publications: ";
+    cin >> researchPublications;
+    cout << "Enter profit: ";
+    cin >> profit;
+    cout << "Enter number of new projects in pipeline: ";
+    cin >> newProjectsInPipeline;
+    cout << "Enter salary: ";
+    cin >> salary;
+
+    salary = checkEligibilityAndIncrement(salary, researchProjects, researchPublications, profit, newProjectsInPipeline);
+
+    cout << "Final salary: " << salary << endl;
+
+    return 0;
+}
+
+
+//Output:
+//Enter number of research projects: 5
+//Enter number of research publications: 2
+//Enter profit: 50000
+//Enter number of new projects in pipeline: 2
+//Enter salary: 270000
+//Salary incremented to 324000
+//Final salary: 324000
+
+//Enter number of research projects: 0
+//Enter number of research publications: 2
+//Enter profit: 1500
+//Enter number of new projects in pipeline: 0
+//Enter salary: 100000
+//Conditions not met. Salary remains 100000
+//Final salary: 100000
