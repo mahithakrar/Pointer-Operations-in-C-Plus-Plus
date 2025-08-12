@@ -1,0 +1,26 @@
+//NAME:MAHI THAKRAR
+//PRN:24070123056
+//ENTC A3
+//EXPERIMENT-10
+
+#include <iostream>
+using namespace std;
+
+void swap(int &x,int &y){
+    int temp=x;
+    x=y;
+    y=temp;
+}
+
+int main() {
+    int a=5,b=10;
+    swap(a,b);
+    cout<<a<<endl<<b;
+    return 0;
+}
+
+
+//Output:
+//10
+//5
+
