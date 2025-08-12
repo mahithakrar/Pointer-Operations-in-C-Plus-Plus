@@ -1,0 +1,65 @@
+//NAME:MAHI THAKRAR
+//PRN:24070123056
+//ENTC A3
+//EXPERIMENT-10
+
+#include <iostream>
+using namespace std;
+
+void checkEligibilityAndIncrement(double& salary, int researchProjects, int researchPublications, double profit, int newProjectsInPipeline) {
+    int conditionsSatisfied = 0;
+
+    if (researchProjects > 0) conditionsSatisfied++;
+    if (researchPublications > 0) conditionsSatisfied++;
+    if (profit > 100000) conditionsSatisfied++; 
+    if (newProjectsInPipeline > 0) conditionsSatisfied++;
+
+    if (conditionsSatisfied >= 3) {
+        salary *= 1.2; // Increment salary by 20%
+        cout << "Salary incremented to " << salary << endl;
+    } else {
+        cout << "Conditions not met. Salary remains " << salary << endl;
+    }
+}
+
+int main() {
+    int researchProjects;
+    int researchPublications;
+    double profit;
+    int newProjectsInPipeline;
+    double salary;
+
+    cout << "Enter number of research projects: ";
+    cin >> researchProjects;
+    cout << "Enter number of research publications: ";
+    cin >> researchPublications;
+    cout << "Enter profit: ";
+    cin >> profit;
+    cout << "Enter number of new projects in pipeline: ";
+    cin >> newProjectsInPipeline;
+    cout << "Enter salary: ";
+    cin >> salary;
+
+    checkEligibilityAndIncrement(salary, researchProjects, researchPublications, profit, newProjectsInPipeline);
+
+    cout << "Final salary: " << salary << endl;
+
+    return 0;
+}
+
+//Output:
+//Enter number of research projects: 2
+//Enter number of research publications: 1
+//Enter profit: 50000
+//Enter number of new projects in pipeline: 1
+//Enter salary: 120000
+//Salary incremented to 144000
+//Final salary: 144000
+
+//Enter number of research projects: 2
+//Enter number of research publications: 0
+//Enter profit: 250000
+//Enter number of new projects in pipeline: 0
+//Enter salary: 205000
+//Conditions not met. Salary remains 205000
+//Final salary: 205000
