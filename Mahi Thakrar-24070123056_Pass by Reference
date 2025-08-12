@@ -1,0 +1,33 @@
+//NAME:MAHI THAKRAR
+//PRN:24070123056
+//ENTC A3
+//EXPERIMENT-10
+
+#include <iostream>
+using namespace std;
+
+void swap(int *x,int *y){
+    int temp=*x;
+    *x=*y;
+    *y=temp;
+}
+
+int main() {
+    int a=5,b=10;
+    cout<<"Before swap\n";
+    cout<<"The value of a="<<a<<endl<<"The value of b="<<b<<endl;
+    
+    swap(&a,&b);
+    cout<<"After swap\n";
+    cout<<"The value of a="<<a<<endl<<"The value of b="<<b<<endl;
+    
+    return 0;
+}
+
+//Output:
+//Before swap
+//The value of a=5
+//The value of b=10
+//After swap
+//The value of a=10
+//The value of b=5
