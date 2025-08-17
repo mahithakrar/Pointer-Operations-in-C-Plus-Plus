@@ -1,0 +1,40 @@
+//NAME:MAHI THAKRAR
+//PRN:24070123056
+//ENTC A3
+//EXPERIMENT-10
+
+#include <iostream>
+using namespace std;
+
+void modifiedArray(int a[], int &num) {  
+    for (int i = 0; i < 5; i++) {
+        a[i] = num++;
+    }
+}
+
+int main() {
+    int num;
+    int a[5] = {10, 20, 30, 40, 50};
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    cout << "Before update: ";
+    for (int i = 0; i < 5; i++) {
+        cout << a[i] << " ";
+    }
+
+    modifiedArray(a, num);  
+
+    cout << "\nAfter update: ";
+    for (int i = 0; i < 5; i++) {
+        cout << a[i] << " ";
+    }
+
+    return 0;
+}
+
+//Output:
+//Enter a number: 25
+//Before update: 10 20 30 40 50 
+//After update: 25 26 27 28 29
