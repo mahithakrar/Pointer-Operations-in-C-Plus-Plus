@@ -1,5 +1,3 @@
-# Pointer-Operations-in-C-Plus-Plus
-
 # Pointer Operations in C++
 
 ## Overview
